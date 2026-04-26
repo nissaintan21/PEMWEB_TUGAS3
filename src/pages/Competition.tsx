@@ -30,7 +30,7 @@ export default function Competition() {
           {/* TEXT */}
           <div className="w-full md:w-2/3 flex flex-col gap-6">
             <h1 className="text-4xl md:text-6xl font-bold text-red-900">
-              IT COMPETITION
+              IT Competition
             </h1>
 
             <h2 className="text-2xl md:text-3xl font-semibold text-red-800">
