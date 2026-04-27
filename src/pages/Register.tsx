@@ -43,7 +43,7 @@ export default function Register(){
     }
 
     return(
-        <div className="min-h-screen flex items-center justify-center py-10">
+        <div className="w-full max-w-md mx-auto">
             <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-lg">
             <h1 className="text-3xl font-bold text-center mb-1 text-[#76153C]">
                 Register

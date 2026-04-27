@@ -7,19 +7,23 @@ export default function Beranda() {
 const cardItems = [
   {
     title: "IT Competition",
-    description: "Kompetisi “From Creation to Innovation” mengajak generasi muda untuk mengembangkan inovasi dan kreativitas guna membentuk kelompok yang memiliki potensi luar biasa, yang mampu mewujudkan masa depan yang berkelanjutan."
+    description: "Kompetisi “From Creation to Innovation” mengajak generasi muda untuk mengembangkan inovasi dan kreativitas guna membentuk kelompok yang memiliki potensi luar biasa, yang mampu mewujudkan masa depan yang berkelanjutan.",
+    path: "/competition",
   },
   {
     title: "IT Seminar",
-    description: "Seminar nasional ini membahas “Human-AI Integration: Merancang Arsitektur Kolaboratif, Bukan Kompetitif” untuk mengembangkan potensi diri dan pengetahuan teknologi lebih dalam lagi."
+    description: "Seminar nasional ini membahas “Human-AI Integration: Merancang Arsitektur Kolaboratif, Bukan Kompetitif” untuk mengembangkan potensi diri dan pengetahuan teknologi lebih dalam lagi.",
+    path: "/seminar",
   },
   {
     title: "IT Workshop",
-    description: "Workshop 'AI for a Sustainable Future: The Role of Z Generation in the Digital Era' membekali Gen Z dengan keterampilan praktis AI untuk menciptakan solusi berkelanjutan."
+    description: "Workshop 'AI for a Sustainable Future: The Role of Z Generation in the Digital Era' membekali Gen Z dengan keterampilan praktis AI untuk menciptakan solusi berkelanjutan.",
+    path: "/workshop",
   },
   {
     title: "IT Talkshow",
-    description: "Talkshow “Humanizing Technology: Kolaborasi Manusia dan AI di Masa Depan” membahas peran manusia dalam memanfaatkan AI untuk solusi berkelanjutan dan peningkatan teknologi."
+    description: "Talkshow “Humanizing Technology: Kolaborasi Manusia dan AI di Masa Depan” membahas peran manusia dalam memanfaatkan AI untuk solusi berkelanjutan dan peningkatan teknologi.",
+    path: "/talkshow",
   },
 ];
 
@@ -97,32 +101,39 @@ const eventItems = [
             />
           </div>
         </section>
+
         <section className="bg-[#FFEDF3] py-20">
                 <div className="max-w-7xl mx-auto px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-red-900 mb-6">
             Tentang INVOFEST
           </h1>
-
+       </div>
     <p className="text-gray-700 text-lg leading-relaxed mb-12">
       Invofest 2025, yang diselenggarakan oleh sarjana terapan Teknik Informatika Universitas Harkat Negeri, adalah festival tahunan yang bertujuan untuk menginspirasi dan memberdayakan generasi muda Indonesia dalam menghadapi era digital. Dengan mengusung tema “Beyond Limits, Beyond Intelligence: Innovate for a Smarter Tomorrow ”. Invofest 2025 menghadirkan berbagai kegiatan menarik seperti kompetisi IT, workshop IT, dan seminar nasional & talkshow dengan para ahli teknologi.
     </p>
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {cardItems.map((item, index) => (
-        <div
-          key={index}
-          className="bg-white rounded-xl p-6 shadow-md border-l-4 border-red-900"
-        >
-          <h3 className="text-xl font-bold text-red-900 mb-3">
-            {item.title}
-          </h3>
-          <p className="text-gray-600 text-sm leading-relaxed">
-            {item.description}
-          </p>
-        </div>
-      ))}
+  {cardItems.map((item, index) => (
+    <div
+      key={index}
+      className="bg-white rounded-xl p-6 shadow-md border-l-4 border-red-900 flex flex-col justify-between"
+    >
+      <div>
+        <h3 className="text-xl font-bold text-red-900 mb-3">
+          {item.title}
+        </h3>
+        <p className="text-gray-600 text-sm leading-relaxed mb-4">
+          {item.description}
+        </p>
+      </div>
+      <Link to={item.path}>
+  <button className="bg-red-900 text-white px-4 py-2 rounded-lg w-fit">
+    INFO SELENGKAPNYA
+  </button>
+      </Link>
     </div>
-  </div>
+  ))}
+</div>
 </section>
 {eventItems.map((item, index) => (
   <section
