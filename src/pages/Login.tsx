@@ -7,6 +7,7 @@ import Input from "../components/InputName";
 import InputPassword from "../components/InputPassword";
 import Button  from "../components/Button";
 import { Link } from "react-router-dom";
+import {useAuthStore} from "../store/useAuthStore";
 
 type FormData = {
     email:string;
@@ -20,14 +21,23 @@ const schema = z.object({
 
 export default function Login() {
     const navigate = useNavigate();
+    const login=useAuthStore((state)=>state.login);
 
     const {register, handleSubmit, formState:{errors} } = useForm<FormData>({ resolver: zodResolver(schema) });
 
     const onSubmit = (data:FormData) => {
-        console.log("Login berhasil!", data)
-
-        navigate("/")
-    }
+        console.log(data);
+        if(data.email==="nissaintan@gmail.com" && 
+            data.password==="24090018"
+        )
+        {
+            alert("Login berhasil");
+            login(data.email);
+            navigate("/dashboard");
+        }else
+        {alert("Login gagal, pastikan email dan password benar");
+        }
+    };
 
     return(
         <div className="w-full max-w-md mx-auto">
